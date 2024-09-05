@@ -9,10 +9,10 @@
 //	Take in up to 80 alphanumeric characters and determine weather or not they make a palindrome
 //
 //	Sawyer Scheve
-//	9/3/2024
+//	9/5/2024
 
 // Custom Header Files
-#include "remove.h"
+#include "Arch-Linux-BTW.h"
 
 int main () {
 	char input[81];
@@ -21,7 +21,7 @@ int main () {
 	while (isRunning) {
 		std::cout << "Welcome to Palindrome.\nInput a word or sentence and I will tell you if it is a palindrome." << std::endl;
 		
-		std::cin >> input;
+		std::cin.getline(input, 81);
 
 		std::cout << remove(input, ' ') << std::endl;
 	}
