@@ -16,7 +16,7 @@
 //	A general C++ tools header file
 //
 //	Author: Sawyer Scheve
-//	9/5/2024
+//	9/11/2024
 
 //  _  _             _           ___ _ _        
 // | || |___ __ _ __| |___ _ _  | __(_) |___ ___
@@ -33,8 +33,8 @@
 // |_|_\___|_|_|_\___/\_/\___|
 //                            
 
-char* remove(char* input, char charToRemove) { // !! BROKEN !!
-	char* output = new char[80];
+char* remove(char* input, char charToRemove) {
+	char* output = new char[81];
 	int counter = 0;
 	for (int i = 0; i < strlen(input); i++) {
 		if (input[i] != charToRemove) {
@@ -44,4 +44,37 @@ char* remove(char* input, char charToRemove) { // !! BROKEN !!
 	}
 	output[counter] = '\0';
 	return output;	
+}
+
+//  ___                         
+// | _ \_____ _____ _ _ ___ ___ 
+// |   / -_) V / -_) '_(_-</ -_)
+// |_|_\___|\_/\___|_| /__/\___|
+//
+
+char* reverse(char* input) {
+	char* output = new char[81];
+	int counter = strlen(input);
+	output[counter] = '\0';
+	counter--;
+	for (int i = 0; i < strlen(input); i++) {
+		output[counter] = input[i];
+		counter--;
+	}
+	return output;
+}
+
+//  _                                       
+// | |   _____ __ _____ _ _ __ __ _ ___ ___ 
+// | |__/ _ \ V  V / -_) '_/ _/ _` (_-</ -_)
+// |____\___/\_/\_/\___|_| \__\__,_/__/\___|
+//
+
+char* lowercase(char* input) {
+	for (int i = 0; i < strlen(input); i++) {
+		if (65 <= int(input[i]) && int(input[i]) <= 90) {
+			input[i] = char(int(input[i]) + 32);
+		}
+	}
+	return input;
 }
